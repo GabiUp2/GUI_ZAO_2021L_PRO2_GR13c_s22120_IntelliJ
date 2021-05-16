@@ -1,7 +1,6 @@
 # GUI_ZAO_2021L_PRO2_GR13c_s22120_IntelliJ
 Second project for PJWSTK GUI class
 
-
 # First reading, gathering requirements:
 * Reverse of Plague Inc. *
 * During gameplay the map will show map of the world with selection of countries. *
@@ -43,20 +42,20 @@ Second project for PJWSTK GUI class
 * Project can't use WYSIWYG tools for window generating
 
 # Second reading, grouping and feature selection
-### Implementation rules
+## Implementation requirements
 * Interactions with user must not be via text console.
 * Project should make use of graphic files
 
-### Game logic:
+## Game logic:
 * Reverse of Plague Inc.
 * The aim of the game is to counter infections of every Person in every Country
 * Game ends when everyone is healed, prevented or infected.
 
-### Start menu:
+## Start menu:
 * Start menu is showed when game opens
-* Start menu has three screens: New Game, High Scores & Exit
+* Start menu has three screens: New Game, High Scores & Exit - ok
 
-### Gameplay:
+## Gameplay:
 * There will be at least 10 countries.
 * At least three different ways of commute must be implemented.
 * There are at least three/two ways of commute between every two different countries. - ???
@@ -69,11 +68,12 @@ Second project for PJWSTK GUI class
 * Infections and spreading are independent systems - ???
 * After starting new game, new window opens with game map and time starts counting
 * At every time player can leave the game using "Ctrl+Shift+Q" hotkey that ends the game and shows ranking screen
+###
 
-# Difficulty level system
+## Difficulty level system
 * When starting "new game" user selects the difficulty level
 
-### Main game map:
+## Main game map:
 * During gameplay the map will show map of the world with selection of countries.
 * The map will show different ways to travel between countries like: airlines, buses, trains, cars, cargo
 * Time counter should be on separate thread
@@ -82,3 +82,7 @@ Second project for PJWSTK GUI class
 * Game window should show score counter, updated in real time
 * Game window should show time counter, updated in real time
 * Ways of traveling between countries should be visualised with animations visualising their types
+
+### Map file reader.
+* Reads in map from file
+* Generates list of countries, their assigned colours and centers for icon displays based on the map. 

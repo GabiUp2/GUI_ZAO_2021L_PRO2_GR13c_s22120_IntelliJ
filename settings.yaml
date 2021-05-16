@@ -1,0 +1,17 @@
+general:
+  author: "Bartosz Wichowski"
+  game_version: "0.1"
+---
+difficulty_levels:
+  - level_1:
+      name: "easy"
+      time_count_modifier: 1
+      basic_virus_spread_probability: 0.33
+  - level_2:
+      name:"medium"
+      time_count_modifier: 1.5
+      basic_virus_spread_probability: 0.50
+  - level_3:
+      name: "hard"
+      time_count_modifier: 2
+      basic_virus_spread_probability: 0.66
