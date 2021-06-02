@@ -1,17 +1,23 @@
 general:
   author: "Bartosz Wichowski"
   game_version: "0.1"
----
+
 difficulty_levels:
   - level_1:
       name: "easy"
       time_count_modifier: 1
       basic_virus_spread_probability: 0.33
+      score_multiplier: 1
+      spendingPointsMultiplier: 2
   - level_2:
-      name:"medium"
+      name: "medium"
       time_count_modifier: 1.5
       basic_virus_spread_probability: 0.50
+      score_multiplier: 1.5
+      spendingPointsMultiplier: 1
   - level_3:
       name: "hard"
       time_count_modifier: 2
       basic_virus_spread_probability: 0.66
+      score_multiplier: 2
+      spendingPointsMultiplier: 0.8

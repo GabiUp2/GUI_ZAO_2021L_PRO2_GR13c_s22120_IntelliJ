@@ -3,18 +3,20 @@ package GameAntyPlague;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class SettingsManager {
+public class SettingsManager implements HoldsGameLogicSettings{
     private File settings_file;
-    private ArrayList<Object> settings;
+    private Map<String, Object> settings;
+    private DifficultyLevelParser difficultyLevelParser = new DifficultyLevelParser();
 
     public SettingsManager(File settings_file) throws IOException {
         this.settings_file = settings_file;
         this.read_in_settings_file(settings_file);
-    };
+    }
 
-    public Object getSettings() {
+    public Map<String, Object> getSettings() {
         return settings;
     }
 
@@ -26,12 +28,8 @@ public class SettingsManager {
         try{
             InputStream inputStream = new FileInputStream(settings_file);
             Yaml yaml = new Yaml();
-            Iterable<Object> all_docs = yaml.loadAll(inputStream);
+            this.settings = (Map<String, Object>) yaml.load(inputStream);
             inputStream.close();
-
-            for (Object document : all_docs) {
-                this.settings.add(document);
-            }
 
         } catch (FileNotFoundException e) {
             System.out.println("Settings file not found!");
@@ -40,12 +38,31 @@ public class SettingsManager {
         } catch (IOException e) {
             System.out.println("Settings file couldn't be closed!");
             e.printStackTrace();
+
+        } catch (Exception e) {
+            System.out.println("Settings file not read in!");
         }
     }
 
     public void print_settings(){
-        for (Object document: this.settings) {
-            System.out.println(document.toString());
-        }
+        System.out.println(settings.toString());
+    }
+
+    @Override
+    public HashMap<String, Object> getGameSessionSettings() {
+        return null;
+    }
+
+    @Override
+    public HashMap<String, Object> getTimeManagerSettings() {
+        return null;
+    }
+
+    @Override
+    public Map<String, DifficultyLevel> getSettingsForLevelsOfDifficulty() {
+        Map
+
+
+        return
     }
 }
